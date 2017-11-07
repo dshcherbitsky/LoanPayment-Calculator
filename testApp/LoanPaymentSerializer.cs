@@ -13,7 +13,7 @@ namespace testApp
         {
             string res = JsonConvert.SerializeObject(
                 obj,
-                Formatting.None,
+                Formatting.Indented,
                 new JsonSerializerSettings()
                 {
                     ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore,
