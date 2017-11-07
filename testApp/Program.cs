@@ -45,13 +45,21 @@ namespace testApp
                     }
                     else
                     {
-                        Console.WriteLine(string.Format("Calculate error(s): {0}", string.Join(",", loanPayment.Errors)));
+                        Console.WriteLine(string.Format("Calculate error(s)"));
+                        foreach (string error in loanPayment.Errors)
+                        {
+                            Console.WriteLine(string.Format(" - {0}", error));
+                        }
                         Console.WriteLine(string.Empty);
                     }
                 }
                 else
                 {
-                    Console.WriteLine(string.Format("Input data validation error(s): {0}", string.Join(",", rawInput.GetErrors())));
+                    Console.WriteLine(string.Format(" Input data validation error(s):"));
+                    foreach (string error in rawInput.GetErrors())
+                    {
+                        Console.WriteLine(string.Format(" - {0}", error));
+                    }
                     Console.WriteLine(string.Empty);
                 }
             }
