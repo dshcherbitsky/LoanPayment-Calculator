@@ -22,7 +22,8 @@ namespace testApp
                 Console.Write("term: ");
                 var term = Console.ReadLine().Trim();
                 Console.WriteLine(string.Empty);
-                
+                Console.WriteLine("---");
+
                 LoanPaymentRawInput rawInput = new LoanPaymentRawInput()
                 {
                     Amount = amount,
@@ -40,8 +41,10 @@ namespace testApp
                     var loanPayment = calc.CalculateLoanPayment(input);
                     if (loanPayment.Success)
                     {
+                        Console.WriteLine(string.Empty);
                         Console.WriteLine(loanPayment.GetResult());
                         Console.WriteLine(string.Empty);
+                        Console.WriteLine("---");
                     }
                     else
                     {

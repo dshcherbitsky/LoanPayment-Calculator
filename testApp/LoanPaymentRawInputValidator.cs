@@ -26,7 +26,7 @@ namespace testApp
                 errors.Add(ApplicationKeys.LoanPaymentRawInputValidation.AMOUNT_ERROR);
             }
 
-            if (Regex.IsMatch(input.Interest, @"^\d{1,2}(\.\d{0,2})?\s?%$"))
+            if (Regex.IsMatch(input.Interest, @"^\d+(\.\d+)?\s?%?$"))
             {
                 double interest;
                 if (!double.TryParse(input.Interest.Replace("%", string.Empty), out interest))

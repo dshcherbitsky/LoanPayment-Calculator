@@ -25,11 +25,11 @@ namespace testApp
             {
                 double pv = input.Amount - input.Downpayment;
                 double i = input.Interest / 100;
-                double t = input.Term;
+                double t = input.Term * 12;
 
-                double mp = (pv * i) / (1 - Math.Pow(1 + i, -1 * t));
-                double ti = pv * (1 + i * t);
+                double mp = (pv * i / 12) / (1 - Math.Pow(1 + i / 12, -1 * t));
                 double tp = mp * t;
+                double ti = tp - pv;
 
                 return new LoanPaymentCalculateResult()
                 {
