@@ -41,6 +41,16 @@ namespace LoanPaymentCalculatorTests
         }
 
         [TestMethod]
+        public void LoanPaymentSerializerTest()
+        {
+            ISerializer serializer = new LoanPaymentSerializer();
+            var loanPaymentCalculateResult = new LoanPaymentCalculateResult() { MonthlyPayment = 18871.23, TotalInterest = 132274.02, TotalPayment = 1132274.02 };
+            string result = serializer.SerializeObjectToJson(loanPaymentCalculateResult);
+            string expect = "{\r\n  \"monthly payment\": 18871.23,\r\n  \"total interest\": 132274.02,\r\n  \"total payment\": 1132274.02\r\n}";
+            Assert.AreEqual(expect, result);
+        }
+
+        [TestMethod]
         public void CalculateLoanPaymentTest()
         {
             ILoanPaymentCalculator calc = new LoanPaymentCalculator();
