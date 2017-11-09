@@ -7,15 +7,26 @@ using testApp.Constants;
 
 namespace testApp
 {
+    /// <summary>
+    /// Represents a strongly typed objects for Loan Payment data validation before calculating.
+    /// </summary>
     public class LoanPaymentInputValidator : ILoanPaymentInputValidator
     {
         private List<string> errors;
 
+        /// <summary>
+        /// Initializes a new instance of the LoanPaymentInputValidator class.
+        /// </summary>
+        /// <param name="errors">The list of validation errors.</param>
         public LoanPaymentInputValidator(List<string> errors)
         {
             this.errors = errors;
         }
 
+        /// <summary>
+        ///  Validate loan payment input data.
+        /// </summary>
+        /// <param name="input">The value to validate</param>
         public bool IsValid(LoanPaymentInput input)
         {
             if (input.Amount <= 0)
@@ -46,6 +57,9 @@ namespace testApp
             return errors.Count == 0;
         }
 
+        /// <summary>
+        ///  Returns loan payment data errors.
+        /// </summary>
         public List<string> GetValidationErrors()
         {
             return errors;

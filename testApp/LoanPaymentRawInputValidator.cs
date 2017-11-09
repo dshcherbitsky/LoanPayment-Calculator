@@ -8,15 +8,27 @@ using testApp.Constants;
 
 namespace testApp
 {
+    /// <summary>
+    /// Represents a strongly typed objects that can be used for validating user raw input data 
+    /// before converting to LoanPaymentInput and calculating loan payment.
+    /// </summary>
     public class LoanPaymentRawInputValidator : ILoanPaymentRawInputValidator
     {
         private List<string> errors;
 
+        /// <summary>
+        /// Initializes a new instance of the LoanPaymentRawInputValidator class.
+        /// </summary>
+        /// <param name="errors">The list of validation errors.</param>
         public LoanPaymentRawInputValidator(List<string> errors)
         {
             this.errors = errors;
         }
 
+        /// <summary>
+        ///  Validate loan payment raw input data.
+        /// </summary>
+        /// <param name="input">The value to validate.</param>
         public bool IsValid(LoanPaymentRawInput input)
         {
 
@@ -38,16 +50,15 @@ namespace testApp
             {
                 errors.Add(ApplicationKeys.LoanPaymentRawInputValidation.INTEREST_ERROR);
             }
-
-
+            
             double downpayment;
             if (!double.TryParse(input.Downpayment, out downpayment))
             {
                 errors.Add(ApplicationKeys.LoanPaymentRawInputValidation.DOWNPAYMENT_ERROR);
             }
 
-            double term;
-            if (!double.TryParse(input.Term, out term))
+            int term;
+            if (!int.TryParse(input.Term, out term))
             {
                 errors.Add(ApplicationKeys.LoanPaymentRawInputValidation.TERM_ERROR);
             }
@@ -55,6 +66,9 @@ namespace testApp
             return errors.Count == 0;
         }
 
+        /// <summary>
+        ///  Returns loan payment raw input data errors.
+        /// </summary>
         public List<string> GetValidationErrors()
         {
             return errors;
