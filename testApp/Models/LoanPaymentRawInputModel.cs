@@ -30,22 +30,22 @@ namespace testApp
         }
 
         /// <summary>
-        /// Represents amount.
+        /// Represents loan payment input amount value.
         /// </summary>
         public string Amount { get; set; }
 
         /// <summary>
-        /// Represents interest.
+        /// Represents loan payment input interest value.
         /// </summary>
         public string Interest { get; set; }
 
         /// <summary>
-        /// Represents down payment.
+        /// Represents loan payment input down payment value.
         /// </summary>
         public string Downpayment { get; set; }
 
         /// <summary>
-        /// Represents term.
+        /// Represents loan payment input term value.
         /// </summary>
         public string Term { get; set; }
 

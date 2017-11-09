@@ -12,22 +12,22 @@ namespace testApp
     public class LoanPaymentInput
     {
         /// <summary>
-        /// Represents amount.
+        /// Represents loan payment amount value.
         /// </summary>
         public double Amount { get; set; }
 
         /// <summary>
-        /// Represents interest.
+        /// Represents loan payment interest value.
         /// </summary>
         public double Interest { get; set; }
 
         /// <summary>
-        /// Represents downpayment.
+        /// Represents loan payment downpayment value.
         /// </summary>
         public double Downpayment { get; set; }
 
         /// <summary>
-        /// Represents term.
+        /// Represents loan payment term value.
         /// </summary>
         public int Term { get; set; }
     }

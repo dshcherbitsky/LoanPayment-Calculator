@@ -32,25 +32,25 @@ namespace testApp
         }
 
         /// <summary>
-        /// Represents monthly payment.
+        /// Represents monthly payment calculated result.
         /// </summary>
         [JsonProperty(PropertyName = ApplicationKeys.LoanPaymentCalculateModelAttr.MONTHLY_PAYMENTS)] 
         public double MonthlyPayment { get; set; }
 
         /// <summary>
-        /// Represents total interest.
+        /// Represents total interest calculated result.
         /// </summary>
         [JsonProperty(PropertyName = ApplicationKeys.LoanPaymentCalculateModelAttr.TOTAL_INTEREST)]
         public double TotalInterest { get; set; }
 
         /// <summary>
-        /// Represents total payment.
+        /// Represents total payment calculated result.
         /// </summary>
         [JsonProperty(PropertyName = ApplicationKeys.LoanPaymentCalculateModelAttr.TOTAL_PAYMENT)]
         public double TotalPayment { get; set; }
 
         /// <summary>
-        /// Represents loan payment data erros.
+        /// Represents loan payment calculated erros.
         /// </summary>
         [JsonIgnore]
         public List<string> Errors { get; set; } = new List<string>();
@@ -68,7 +68,7 @@ namespace testApp
         }
 
         /// <summary>
-        /// Returns loan payment calculated result.
+        /// Returns loan payment calculated result as JSON string.
         /// </summary>
         /// <returns>Loan payment calculated result as JSON string.</returns>
         public string GetResult()
