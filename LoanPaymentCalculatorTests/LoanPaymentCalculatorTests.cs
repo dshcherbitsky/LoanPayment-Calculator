@@ -51,6 +51,7 @@ namespace LoanPaymentCalculatorTests
             Assert.AreEqual(expect.MonthlyPayment, result.MonthlyPayment);
             Assert.AreEqual(expect.TotalPayment, result.TotalPayment);
             Assert.AreEqual(expect.TotalInterest, result.TotalInterest);
+            Assert.AreEqual(expect.Success, result.Success);
             Assert.AreEqual(0, result.Errors.Count);
         }
     }
