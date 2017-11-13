@@ -51,7 +51,7 @@ namespace LoanPaymentCalculatorTests
         }
 
         [TestMethod]
-        public void CalculateLoanPaymentTest()
+        public void CalculateLoanPaymentWithoutErrorsTest()
         {
             ILoanPaymentCalculator calc = new LoanPaymentCalculator();
             var input = new LoanPaymentInput() { Amount = 1000000, Downpayment = 0, Interest = 5, Term = 5 };
