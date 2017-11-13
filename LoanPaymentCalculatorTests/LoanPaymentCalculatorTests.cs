@@ -64,5 +64,14 @@ namespace LoanPaymentCalculatorTests
             Assert.AreEqual(expect.Success, result.Success);
             Assert.AreEqual(0, result.Errors.Count);
         }
+
+        [TestMethod]
+        public void CalculateLoanPaymentWithErrorsTest()
+        {
+            ILoanPaymentCalculator calc = new LoanPaymentCalculator();
+            var input = new LoanPaymentInput() { Amount = -1000000, Downpayment = -10, Interest = -5, Term = -5 };
+            var result = calc.CalculateLoanPayment(input);
+            Assert.AreEqual(5, result.Errors.Count);
+        }
     }
 }
